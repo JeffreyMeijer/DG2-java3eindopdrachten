@@ -40,9 +40,7 @@ public class Programma extends JFrame{
 		toevoeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == toevoeg) {
-					volnaam += voornaam.getText() + " " + achternaam.getText();
-					listModel.addElement(volnaam);
-					volnaam = "";
+					database.insertIntoDatabase(voornaam.getText(), achternaam.getText());
 				}
 			}
 		});
