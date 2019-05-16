@@ -3,8 +3,11 @@ import java.awt.event.*;
 import javax.swing.*;
 public class Programma extends JFrame{
 	private static String volnaam = "";
+	public static DefaultListModel<String> listModel;
 	
 	public static void main(String[] args) {
+		Database database = new Database();
+		database.startConnection();
 		JFrame f = new JFrame("Personen");
 		f.setVisible(true);
 		f.setSize(540,400);
@@ -23,7 +26,7 @@ public class Programma extends JFrame{
 		panel.add(achternaam);
 		
 		
-		DefaultListModel<String> listModel = new DefaultListModel<>();
+		listModel = new DefaultListModel<>();
 		
 		JList<String> list = new JList<>(listModel);
 		JScrollPane s = new JScrollPane(list);
