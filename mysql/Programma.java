@@ -2,12 +2,11 @@ package mysql;
 import java.awt.event.*;
 import javax.swing.*;
 public class Programma extends JFrame{
-	private static String volnaam = "";
 	public static DefaultListModel<String> listModel;
 	
 	public static void main(String[] args) {
 		Database database = new Database();
-		database.startConnection();
+		database.startConnection("personen","jeffrey","Anglito22@");
 		JFrame f = new JFrame("Personen");
 		f.setVisible(true);
 		f.setSize(540,400);

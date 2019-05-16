@@ -4,10 +4,10 @@ import java.sql.*;
 
 public class Database {
 	public Connection con;
-	public void startConnection() {
+	public void startConnection(String databasenaam, String username, String wachtwoord) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/personen", "jeffrey", "Anglito22@");
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/" + databasenaam, username, wachtwoord);
 			try {
 				if(!con.isClosed()) {
 					System.out.println("Connection successvol");
