@@ -9,6 +9,7 @@ public class Main {
 		logica.setKolommen(4);
 		logica.setRijen(4);
 		scherm.createButtons(logica.getRijen(), logica.getKolommen());
+		//lol
 	}
 
 }
