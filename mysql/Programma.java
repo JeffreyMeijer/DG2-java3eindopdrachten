@@ -45,6 +45,17 @@ public class Programma extends JFrame{
 			}
 		});
 		panel.add(toevoeg);
+		JButton selectall = new JButton("Krijg alle personen");
+		selectall.setBounds(150,300,200,50);
+		selectall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == selectall) {
+					listModel.clear();
+					database.getallfromDatabase();
+				}
+			}
+		});
+		panel.add(selectall);
 		f.revalidate();
 		f.setVisible(true);
 		f.setResizable(false);
