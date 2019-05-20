@@ -2,11 +2,12 @@ package memory;
 
 import java.awt.GridLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Scherm extends JFrame{
+public class Scherm extends JFrame {
 	public JFrame f;
 	public JPanel p;
 	public void createWindow(int h, int w) {
@@ -18,13 +19,19 @@ public class Scherm extends JFrame{
 		f.setSize(h,w);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	public void createButtons(int rijen,int kolommen) {
+	
+	//Maakt buttons
+	public void createButtons(int rijen, int kolommen, int h, int w) {
 		JButton[][] buttons = new JButton[rijen][kolommen];
-		for(int i=0;i < rijen;i++) {
-			for(int j = 0; j < kolommen; j++) {
-				buttons[i][j] = new JButton("Test");
-				p.add(buttons[i][j]);
+		for(int r = 0; r < rijen; r++) {
+			for(int k = 0; k < kolommen; k++) {
+				buttons[r][k] = new JButton(new ImageIcon("fotos/cover/cover.jpg"));
+				p.add(buttons[r][k]);
 			}
 		}
+		f.setSize(h,w + 1);
+		f.setSize(h,w);
+		
 	}
+	
 }
