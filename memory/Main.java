@@ -9,6 +9,7 @@ public class Main {
         logica.setRijen(4);
         logica.setKolommen(4);
         logica.setFotoArray(logica.getRijen(), logica.getKolommen());
+        logica.shuffleArray(logica.getFotoArray());
         scherm.createButtons(logica.getRijen(), logica.getKolommen(), logica.getFotoArray(),1280, 720);
     }
 
