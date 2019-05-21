@@ -6,10 +6,10 @@ public class Main {
         Logica logica = new Logica();
         Scherm scherm = new Scherm();
         scherm.createWindow(1280, 720);
-        logica.setKolommen(4);
         logica.setRijen(4);
-        scherm.createButtons(logica.getRijen(), logica.getKolommen(), 1280, 720);
+        logica.setKolommen(4);
         logica.setFotoArray(logica.getRijen(), logica.getKolommen());
+        scherm.createButtons(logica.getRijen(), logica.getKolommen(), logica.getFotoArray(),1280, 720);
     }
 
 }
