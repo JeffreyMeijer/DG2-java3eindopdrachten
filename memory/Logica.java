@@ -1,13 +1,14 @@
 package memory;
 
 import java.io.File;
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 public class Logica {
 	private int kolommen;
 	private int rijen;
-	private ImageIcon[][] fotoArray;
+	private ArrayList<ImageIcon> fotoArray;
 	
 	//Getters
 	public int getKolommen() {
@@ -18,7 +19,7 @@ public class Logica {
 		return rijen;
 	}
 	
-	public ImageIcon[][] getFotoArray() {
+	public ArrayList<ImageIcon> getFotoArray() {
 		return fotoArray;
 	}
 	
@@ -30,23 +31,34 @@ public class Logica {
 	public void setRijen(int rijen) {
 		this.rijen = rijen;
 	}
-	
+	/**
+	 * javadoc
+	 * @param fileNumber  dit is het aantal rijen van ..
+	 * @param kolommen
+	 */
 	public void setFotoArray(int rijen, int kolommen) {
-		File dir = new File("fotos/card_fronts");
+		File dir = new File("src/memory/fotos/card_fronts");
 		File[] files = dir.listFiles();
 		int fileNumber = 0;
-		ImageIcon[][] fotos = new ImageIcon[rijen][kolommen];
-		for(int r = 0; r < rijen; r++) {
-			for (int i = 0; i < kolommen / 2; i++, fileNumber++) {
-				File file = files[fileNumber];
-				for(int k = 0; k < 2; k++) {
-					fotos[r][i + k] = new ImageIcon("" + file);
-					System.out.println(fotos[r][i + k]);
-				}
+		ArrayList<ImageIcon> fotoArray = new ArrayList<ImageIcon>();
+		for(int r = 0; r < rijen * kolommen / 2; r++) {
+			File file = files[fileNumber];
+			
+			for (int i = 0; i < 2; i++) {
+				fotoArray.add(new ImageIcon("" + file));
 			}
+			fileNumber++;
+		
 		}
-		this.fotoArray = fotos;
+		
+		for (int i = 0; i < 16; i++) {
+			System.out.println(fotoArray.get(i));
+		}
+		this.fotoArray = fotoArray;
+	
 	}
 	
 	
 }
+
+

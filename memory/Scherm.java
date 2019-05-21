@@ -25,7 +25,7 @@ public class Scherm extends JFrame {
 		JButton[][] buttons = new JButton[rijen][kolommen];
 		for(int r = 0; r < rijen; r++) {
 			for(int k = 0; k < kolommen; k++) {
-				buttons[r][k] = new JButton(new ImageIcon("fotos/cover/cover.jpg"));
+				buttons[r][k] = new JButton(new ImageIcon("src/memory/fotos/cover/cover.jpg"));
 				p.add(buttons[r][k]);
 			}
 		}
