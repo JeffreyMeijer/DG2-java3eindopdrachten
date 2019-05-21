@@ -1,5 +1,5 @@
 package memory;
- 
+
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
- 
+
 public class Scherm{
     public JFrame f;
     public JPanel p;
@@ -30,7 +30,7 @@ public class Scherm{
         f.setSize(h,w);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
+
     public ActionListener createActionlistener() {
     	ActionListener listener = new ActionListener() {
     		@Override
@@ -41,24 +41,24 @@ public class Scherm{
     				int width = ((JButton) e.getSource()).getWidth(); // Pakt de width van de button
     				Image foto = new ImageIcon(buttonclicked.getText()).getImage().getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH); // Zet Foto height en width naar button height en width
     				ImageIcon iconfoto = new ImageIcon(foto); // Maakt van Image een ImageIcon (Zodat je de icon voor de button kan zetten)
-    				
+
     				//Checkt hoevaak er al geklikt is
     				if(geklikt == 0) {
         				fotos.add(buttonclicked.getText());
         				foto1 = buttonclicked;
         				foto1.setIcon(iconfoto);
         				geklikt++;
-    				}	
+    				}
     				else if(geklikt == 1) {
     					fotos.add(buttonclicked.getText());
     					foto2 = buttonclicked;
     					foto2.setIcon(iconfoto);
-    					
+
     					//Als de fotos hetzelfde zijn, clear de array en zet geklikt terug naar 0
         				if(fotos.get(0).equals(fotos.get(1))) {
         					fotos.clear();
         					geklikt = 0;
-        					
+
         					//Als de fotos niet hetzelfde zijn, wacht 2 seconden en zet dan de foto terug naar cover.jpg
         				}else {
         					new java.util.Timer().schedule( 
@@ -68,8 +68,8 @@ public class Scherm{
         					            	foto1.setIcon(new ImageIcon("src/memory/fotos/cover/cover.jpg"));
         	        						foto2.setIcon(new ImageIcon("src/memory/fotos/cover/cover.jpg"));
         					            }
-        					        }, 
-        					        1000 
+        					        },
+        					        1000
         					);
         					fotos.clear();
         					geklikt = 0;
@@ -80,7 +80,7 @@ public class Scherm{
     };
     return listener;
    }
-   
+
     //Maakt buttons
     public void createButtons(int rijen, int kolommen, ArrayList<ImageIcon> fotoarray, int h, int w) {
         int counter = 0;
@@ -89,7 +89,7 @@ public class Scherm{
             for(k = 0; k < kolommen; k++) {
                 buttons[r][k] = new JButton(new ImageIcon("src/memory/fotos/cover/cover.jpg"));
                 buttons[r][k].addActionListener(createActionlistener());
-                buttons[r][k].setText(fotoarray.get(counter).toString());	
+                buttons[r][k].setText(fotoarray.get(counter).toString());
                 p.add(buttons[r][k]);
                 counter++;
                 //Checkt of de button een parent heeft (in dit geval of hij in een panel zit, zo niet sluit hij de programma)
@@ -101,7 +101,7 @@ public class Scherm{
         }
         f.setSize(h,w + 1);
         f.setSize(h,w);
-       
+
     }
-    
+
 }
