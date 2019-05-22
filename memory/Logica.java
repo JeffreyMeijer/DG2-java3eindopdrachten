@@ -33,9 +33,7 @@ public class Logica {
 		this.rijen = rijen;
 	}
 	
-	/* @param rijen  Dit is het aantal rijen van het memory spel.
-	 * @param kolommen	Dit is het aantal kolommen van het memory spel.
-	 */
+	//Maakt de foto array.
 	public void setFotoArray(int rijen, int kolommen) {
 		File dir = new File("src/memory/fotos/card_fronts"); //Hier kies je een directory.
 		File[] files = dir.listFiles();	//Haakt een array van de geselecteerde directory.

@@ -53,10 +53,22 @@ public class Scherm{
     					foto2 = buttonclicked;
     					foto2.setIcon(iconfoto);
     					
-    					//Als de fotos hetzelfde zijn, clear de array en zet geklikt terug naar 0
+    					//Als de fotos hetzelfde zijn, clear de array, maak de 2 buttons onzichtbaar en zet geklikt terug naar 0
         				if(fotos.get(0).equals(fotos.get(1))) {
         					fotos.clear();
         					geklikt = 0;
+        					new java.util.Timer().schedule( 
+        					        new java.util.TimerTask() {
+        					        	@Override
+        					            public void run() {
+        					        		foto1.setVisible(false);
+        					        		foto2.setVisible(false);
+        					        		foto1.setEnabled(false);
+        					        		foto2.setEnabled(false);
+        					            }
+        					        },
+        					        500
+        					);
 
         					//Als de fotos niet hetzelfde zijn, wacht 2 seconden en zet dan de foto terug naar cover.jpg
         				}else {
