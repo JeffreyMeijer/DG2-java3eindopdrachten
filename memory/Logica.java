@@ -8,6 +8,8 @@ import javax.swing.ImageIcon;
 public class Logica {
 	private int kolommen;
 	private int rijen;
+	private final String COVERPATH = "src/memory/fotos/cover/";
+	private final String CARDFRONTSPATH = "src/memory/fotos/card_fronts";
 	private ArrayList<ImageIcon> fotoArray;
 
 	//Getters
@@ -22,6 +24,10 @@ public class Logica {
 	public ArrayList<ImageIcon> getFotoArray() {
 		return fotoArray;
 	}
+	
+	public String getCOVERPATH() {
+		return COVERPATH;
+	}
 
 	//Setters
 	public void setKolommen(int kolommen) {
@@ -31,13 +37,14 @@ public class Logica {
 	public void setRijen(int rijen) {
 		this.rijen = rijen;
 	}
+	
 	/**
 	 * javadoc
 	 * @param fileNumber  dit is het aantal rijen van ..
 	 * @param kolommen
 	 */
 	public void setFotoArray(int rijen, int kolommen) {
-		File dir = new File("src/memory/fotos/card_fronts");
+		File dir = new File(CARDFRONTSPATH);
 		File[] files = dir.listFiles();
 		int fileNumber = 0;
 		ArrayList<ImageIcon> fotoArray = new ArrayList<ImageIcon>();

@@ -47,7 +47,7 @@ public class Scherm{
         				fotos.add(buttonclicked.getText());
         				foto1 = buttonclicked;
         				foto1.setIcon(iconfoto);
-        				geklikt++;
+        			geklikt++;
     				}
     				else if(geklikt == 1) {
     					fotos.add(buttonclicked.getText());
@@ -65,8 +65,8 @@ public class Scherm{
         					        new java.util.TimerTask() {
         					            @Override
         					            public void run() {
-        					            	foto1.setIcon(new ImageIcon("src/memory/fotos/cover/cover.jpg"));
-        	        						foto2.setIcon(new ImageIcon("src/memory/fotos/cover/cover.jpg"));
+        					            	foto1.setIcon(new ImageIcon(logica.getCOVERPATH() + "cover.jpg"));
+        	        						foto2.setIcon(new ImageIcon(logica.getCOVERPATH() + "cover.jpg"));
         					            }
         					        },
         					        1000
