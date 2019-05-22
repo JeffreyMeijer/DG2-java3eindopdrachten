@@ -104,7 +104,7 @@ public class Scherm{
     	JButton[][] buttons = new JButton[rijen][kolommen];
         for(r = 0; r < rijen; r++) {
             for(k = 0; k < kolommen; k++) {
-                buttons[r][k] = new JButton(new ImageIcon("src/memory/fotos/cover/cover.jpg"));
+                buttons[r][k] = new JButton(new ImageIcon(logica.getCOVERPATH() + "cover.jpg"));
                 buttons[r][k].addActionListener(createActionlistener());
                 buttons[r][k].setText(fotoarray.get(counter).toString());
                 p.add(buttons[r][k]);

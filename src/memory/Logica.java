@@ -10,8 +10,8 @@ public class Logica {
 	private int kolommen;
 	private int rijen;
 	private int kaarten = 16;
-	private final String COVERPATH = "src/memory/fotos/cover/";
-	private final String CARDFRONTSPATH = "src/memory/fotos/card_fronts/";
+	private final String COVERPATH = "memory/fotos/cover/";
+	private final String CARDFRONTSPATH = "memory/fotos/card_fronts/";
 	private ArrayList<ImageIcon> fotoArray;
 
 	//Getters
