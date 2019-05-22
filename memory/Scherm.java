@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Scherm{
@@ -65,6 +66,11 @@ public class Scherm{
         					        		foto2.setVisible(false);
         					        		foto1.setEnabled(false);
         					        		foto2.setEnabled(false);
+        					        		logica.kaartenAftrek();
+        					        		if(logica.getAantalKaarten() == 0) {
+        					        			JOptionPane.showMessageDialog(null, "Je hebt gewonnen :D");
+        					        			System.exit(0);
+        					        		}
         					            }
         					        },
         					        500

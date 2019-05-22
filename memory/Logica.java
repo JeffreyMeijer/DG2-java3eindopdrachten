@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 public class Logica {
 	private int kolommen;
 	private int rijen;
+	private int kaarten = 16;
 	private final String COVERPATH = "src/memory/fotos/cover/";
 	private final String CARDFRONTSPATH = "src/memory/fotos/card_fronts";
 	private ArrayList<ImageIcon> fotoArray;
@@ -29,6 +30,10 @@ public class Logica {
 	public String getCOVERPATH() {
 		return COVERPATH;
 	}
+	
+	public int getAantalKaarten() {
+		return kaarten;
+	}
 
 	//Setters
 	public void setKolommen(int kolommen) {
@@ -37,6 +42,10 @@ public class Logica {
 
 	public void setRijen(int rijen) {
 		this.rijen = rijen;
+	}
+	
+	public void kaartenAftrek() {
+		this.kaarten -= 2;
 	}
 
 	/**
