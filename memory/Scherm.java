@@ -41,7 +41,6 @@ public class Scherm{
     				int width = ((JButton) e.getSource()).getWidth(); // Pakt de width van de button
     				Image foto = new ImageIcon(buttonclicked.getText()).getImage().getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH); // Zet Foto height en width naar button height en width
     				ImageIcon iconfoto = new ImageIcon(foto); // Maakt van Image een ImageIcon (Zodat je de icon voor de button kan zetten)
-
     				//Checkt hoevaak er al geklikt is
     				if(geklikt == 0) {
         				fotos.add(buttonclicked.getText());
@@ -53,11 +52,23 @@ public class Scherm{
     					fotos.add(buttonclicked.getText());
     					foto2 = buttonclicked;
     					foto2.setIcon(iconfoto);
-
-    					//Als de fotos hetzelfde zijn, clear de array en zet geklikt terug naar 0
+    					
+    					//Als de fotos hetzelfde zijn, clear de array, maak de 2 buttons onzichtbaar en zet geklikt terug naar 0
         				if(fotos.get(0).equals(fotos.get(1))) {
         					fotos.clear();
         					geklikt = 0;
+        					new java.util.Timer().schedule( 
+        					        new java.util.TimerTask() {
+        					        	@Override
+        					            public void run() {
+        					        		foto1.setVisible(false);
+        					        		foto2.setVisible(false);
+        					        		foto1.setEnabled(false);
+        					        		foto2.setEnabled(false);
+        					            }
+        					        },
+        					        500
+        					);
 
         					//Als de fotos niet hetzelfde zijn, wacht 2 seconden en zet dan de foto terug naar cover.jpg
         				}else {
@@ -69,7 +80,7 @@ public class Scherm{
         	        						foto2.setIcon(new ImageIcon(logica.getCOVERPATH() + "cover.jpg"));
         					            }
         					        },
-        					        1000
+        					        500
         					);
         					fotos.clear();
         					geklikt = 0;

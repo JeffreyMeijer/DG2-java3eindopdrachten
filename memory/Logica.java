@@ -2,6 +2,7 @@ package memory;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.ImageIcon;
 
@@ -24,7 +25,7 @@ public class Logica {
 	public ArrayList<ImageIcon> getFotoArray() {
 		return fotoArray;
 	}
-	
+
 	public String getCOVERPATH() {
 		return COVERPATH;
 	}
@@ -37,7 +38,7 @@ public class Logica {
 	public void setRijen(int rijen) {
 		this.rijen = rijen;
 	}
-	
+
 	/**
 	 * javadoc
 	 * @param fileNumber  dit is het aantal rijen van ..
@@ -49,21 +50,22 @@ public class Logica {
 		int fileNumber = 0;
 		ArrayList<ImageIcon> fotoArray = new ArrayList<ImageIcon>();
 		for(int r = 0; r < rijen * kolommen / 2; r++) {
-			File file = files[fileNumber];
-
 			for (int i = 0; i < 2; i++) {
-				fotoArray.add(new ImageIcon("" + file));
+				fotoArray.add(new ImageIcon("" + files[fileNumber])); //Voegt bestanden toe aan het foto array en maakt het een ImageIcon.
 			}
 			fileNumber++;
 
 		}
-
-		for (int i = 0; i < 16; i++) {
-			System.out.println(fotoArray.get(i));
-		}
 		this.fotoArray = fotoArray;
 
 	}
+
+	//Shuffled de foto array.
+	public void shuffleArray(ArrayList<ImageIcon> fotoArray) {
+		Collections.shuffle(fotoArray);
+		this.fotoArray = fotoArray;
+	}
+
 
 
 }
