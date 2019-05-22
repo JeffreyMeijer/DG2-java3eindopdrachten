@@ -48,16 +48,12 @@ public class Logica {
 		this.kaarten -= 2;
 	}
 
-	/**
-	 * javadoc
-	 * @param fileNumber  dit is het aantal rijen van ..
-	 * @param kolommen
-	 */
+	//maakt de foto array.
 	public void setFotoArray(int rijen, int kolommen) {
-		File dir = new File(CARDFRONTSPATH);
-		File[] files = dir.listFiles();
-		int fileNumber = 0;
-		ArrayList<ImageIcon> fotoArray = new ArrayList<ImageIcon>();
+		File dir = new File(CARDFRONTSPATH);  //Hier kies je een directory.
+		File[] files = dir.listFiles(); //Maakt een array van de geselecteerde directory.
+		int fileNumber = 0; //Hier mee pak je steeds de volgende bestand in het array.
+		ArrayList<ImageIcon> fotoArray = new ArrayList<ImageIcon>(); //Arraylist waar de foto's in gaan (hier gebruik ik ImageIcon voor).
 		for(int r = 0; r < rijen * kolommen / 2; r++) {
 			for (int i = 0; i < 2; i++) {
 				fotoArray.add(new ImageIcon("" + files[fileNumber])); //Voegt bestanden toe aan het foto array en maakt het een ImageIcon.
