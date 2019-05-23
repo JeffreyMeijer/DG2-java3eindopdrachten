@@ -7,14 +7,50 @@
     Dit resulteerd dus ook in een gewonnen scherm terwijl er nog foto's zijn.
     
     
-## Hoe run je het?
-Eerst compile je alle .java files met
+## Hoe run je memory?
+Eerst compile je alle .java files in de map
+
+```
+<Pad naar DG2-java3eindopdrachten-master>/DG2-java3eindopdrachten-master/src/memory
+```
+
+met
+
 ```
 javac *.java
 ```
+Daarna ga je 1 map terug met
+
+```
+cd ..
+```
 Daarna run je het programma met
+
 ```
 java memory.Main
+```
+
+## Hoe run je MySQL
+Eerst compile je alle .java files in de map
+
+```
+<Pad naar DG2-java3eindopdrachten-master>/DG2-java3eindopdrachten-master/src/mysql
+```
+
+met
+
+```
+javac *.java
+```
+Daarna ga je 1 map terug met
+
+```
+cd ..
+```
+Daarna run je het programma met
+
+```
+java mysql.Programma
 ```
 
 ## Auteurs
